@@ -5,6 +5,14 @@
     <title></title>
 </head>
 <body>
-
+<a href="http://products-clone.dev/#/createProduct"> Add new Product</a>
+    <ul>
+        <li ng-repeat="product in products">
+            <a href="http://products-clone.dev/#/productItem/{{ product.id }}">
+                {{ product.name }}
+            </a>
+            <button ng-click="delete(product.id)">Delete</button>
+        </li>
+    </ul>
 </body>
 </html>

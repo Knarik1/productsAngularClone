@@ -28,7 +28,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -39,7 +39,13 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newProduct = Product::create($data);
+        if ($newProduct->save()) {
+            return response('record saved');
+        } else {
+            return response('smth went wrong', 500);
+        }
     }
 
     /**
@@ -50,7 +56,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return response($product);
     }
 
     /**
@@ -84,6 +91,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id)->delete();
+        return response('deleted');
     }
 }

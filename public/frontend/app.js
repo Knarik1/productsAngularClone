@@ -3,10 +3,22 @@
  */
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', '$locationProvider', function($routeProvider,$locationProvider){
     $routeProvider
        .when('/products', {
-           templateUrl: 'allProducts.html',
+           templateUrl: 'http://products-clone.dev/frontend/modules/products/views/allProducts.html',
            controller: 'ProductsListCtrl'
        })
+        .when('/productItem/:id', {
+            templateUrl:'http://products-clone.dev/frontend/modules/products/views/productShow.html',
+            controller: 'ProductShowCtrl'
+        })
+        .when('/createProduct', {
+            templateUrl: 'http://products-clone.dev/frontend/modules/products/views/createProduct.html',
+            controller: 'CreateProductCtrl'
+        })
+        .when('/products/:id/edit', {
+            templateUrl: 'http://products-clone.dev/frontend/modules/products/views/editProduct.html',
+            controller: 'EditProductCtrl'
+        })
 }]);

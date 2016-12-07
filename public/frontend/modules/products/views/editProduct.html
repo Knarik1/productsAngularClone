@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="page-header">
+                <h1 class="text-center text-success">create new poduct</h1>
+            </div>
+            {{ product }}
+            <form name="productForm" ng-submit="submitForm(product)" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="name"
+                           name="name"
+                           ng-model="product.name"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="category">category</label>
+                    <input type="text"
+                           class="form-control"
+                           id="category"
+                           name="category"
+                           ng-model="product.category"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="price">price</label>
+                    <input type="number"
+                           class="form-control"
+                           id="price"
+                           name="price"
+                           ng-model="product.price"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="brand">brand</label>
+                    <input type="text"
+                           class="form-control"
+                           id="brand"
+                           name="brand"
+                           ng-model="product.brand"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="color">color</label>
+                    <input type="text"
+                           class="form-control"
+                           id="color"
+                           name="color"
+                           ng-model="product.color"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="type">type</label>
+                    <input type="text"
+                           class="form-control"
+                           id="type"
+                           name="type"
+                           ng-model="product.type"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="count">count</label>
+                    <input type="int"
+                           class="form-control"
+                           id="count"
+                           name="count"
+                           ng-model="product.count"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="file">File input</label>
+                    <input type="file"
+                           id="file"
+                           name="file"
+                           ng-model="product.file"
+                           >
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
